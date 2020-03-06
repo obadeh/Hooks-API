@@ -24,9 +24,15 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/obadeh/Hooks-API.git"
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
+  "homepage": "https://obadeh.github.io/Hooks-API/",
+
   "browserslist": {
     "production": [
       ">0.2%",
