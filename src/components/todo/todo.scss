@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One&display=swap');
 body, html {
     height: 100%;
     margin: 0;
     padding:0;
     width: 100%;
+    background-color: #eee;
+    font-family: sans-serif;
 }
 .todo-details {
     display:flex;
@@ -27,7 +30,7 @@ body, html {
     display:flex;
     flex-direction:row;
     justify-content: flex-start;
-    margin: 2em;
+    margin: 4em;
 
     form {
 
@@ -90,5 +93,18 @@ body, html {
 
         }
     }
+
+}
+footer{
+    text-align: center;
+}
+.tasks{
+font-size: 25px;
+    font-family: cursive;
+}
+header h2 {
+    margin: 30px;
+    font-family: 'Fredoka One', cursive;
+    font-size: 30px;
 
 }

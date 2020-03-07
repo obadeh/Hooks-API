@@ -95,7 +95,7 @@ const Todo2 = (props) =>{
           </form>
         </div>
 
-        <div>
+        <div className="tasks">
           <ul>
             { todoList.map(item => (
               <li

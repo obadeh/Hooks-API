@@ -6,9 +6,9 @@ const Header = props => {
   return(
     <header>
       <h2>
-        There are
+        <p>There are</p> 
         {props.todoList.filter( item => !item.complete ).length}
-        Items To Complete
+        " Items To Complete
       </h2>
     </header>
   );

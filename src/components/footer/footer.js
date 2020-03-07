@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 
 const Footer = props => {
 
-  let date = new Date().toLocaleDateString();
+  let date = new Date().toTimeString();
   return(
     <footer>
-      <p>today: {date}</p>
+      <p>{date}</p>
       <h3>
-       by obada Q 2020
+       By obada Q 2020
       </h3>
     </footer>
   );
