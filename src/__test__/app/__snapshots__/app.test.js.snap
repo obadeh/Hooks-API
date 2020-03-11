@@ -4,9 +4,11 @@ exports[`<App /> renders correctly 1`] = `
 <div>
   <header>
     <h2>
-      There are
+      <p>
+        There are
+      </p>
       0
-      Items To Complete
+      " Items To Complete
     </h2>
   </header>
   <section
@@ -68,9 +70,19 @@ exports[`<App /> renders correctly 1`] = `
         </button>
       </form>
     </div>
-    <div>
+    <div
+      className="tasks"
+    >
       <ul />
     </div>
   </section>
+  <footer>
+    <p>
+      18:08:00 GMT+0200 (Eastern European Standard Time)
+    </p>
+    <h3>
+      By obada Q 2020
+    </h3>
+  </footer>
 </div>
 `;
