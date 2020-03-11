@@ -1,6 +1,6 @@
-# LAB - Class 31
+# LAB - Class 32
 
-## Hooks API
+## Custom Hooks
 
 ### Author: obada al-quran
 
@@ -32,4 +32,4 @@ i.e.
 
 #### UML
 
-![uml](./todo.png)
+![uml](./todo2.png)
