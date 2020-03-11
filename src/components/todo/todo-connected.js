@@ -1,37 +1,35 @@
 /* eslint-disable no-undefined */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,useContext } from 'react';
 import { When } from '../if';
 import Modal from '../modal';
 import useForm from '../hooks/form.js';
+import Header from '../header/header.js';
+import Footer from '../footer/footer.js';
+import {SettingsContext} from '../context/setting.js';
 
 import './todo.scss';
-
 const todoAPI = 'https://api-js401.herokuapp.com/api/v1/todo';
 
+
 const Todo2 = (props) =>{
+  const context = useContext(SettingsContext);
 
   const addItem = () => {
-
-    // e.preventDefault();
-    // e.target.reset();
-
-    const _updateState = newItem =>
-      setTodoList([...todoList, newItem]);
-
+    const _updateState = newItem =>{
+      console.log('newItem : ', newItem);
+      return  setTodoList([...todoList, newItem]);};
     callAPI( todoAPI, 'POST', values, _updateState );
 
   };
 
   // from form hook
   const [handleSubmit, handleInput, handleChange, values] = useForm(addItem);
-
+  //
   const [todoList,setTodoList] = useState([]);
-  // const [item,setItem] = useState({});
   const [showDetails,setShowDetails] = useState(false);
   const [details,setDetails] = useState({});
 
   const callAPI = (url, method = 'get', body, handler, errorHandler) => {
-
     return fetch(url, {
       method: method,
       mode: 'cors',
@@ -43,8 +41,6 @@ const Todo2 = (props) =>{
       .then(data => typeof handler === 'function' ? handler(data) : null )
       .catch( (e) => typeof errorHandler === 'function' ? errorHandler(e) : console.error(e)  );
   };
-
-
 
   const deleteItem = id => {
 
@@ -62,10 +58,7 @@ const Todo2 = (props) =>{
       setTodoList(todoList.map(values =>
         values._id === newItem._id ? newItem : values,
       ));
-
-
-
-    callAPI( `${todoAPI}/${updatedItem.id}`, 'PUT', updatedItem, _updateState );
+    callAPI( `${todoAPI}/${updatedItem._id}`, 'PUT', updatedItem, _updateState );
 
   };
 
@@ -93,17 +86,18 @@ const Todo2 = (props) =>{
 
   useEffect(() => {
     getTodoItems();
-  });
+  },[]);
+
+  const hide = () =>{
+    context.changeDisplay(false);
+  };
+  const show = () =>{
+    context.changeDisplay(true);
+  };
 
   return (
     <>
-      <header>
-        <h2>
-            There are
-          {todoList.filter( values => !values.complete ).length}
-            Items To Complete
-        </h2>
-      </header>
+      <Header todoList={todoList}/>
 
       <section className="todo">
 
@@ -138,7 +132,7 @@ const Todo2 = (props) =>{
           <ul>
             { todoList.map(values => (
               <li
-                className={`complete-${values.complete.toString()}`}
+                className={`complete-${values.complete.toString()}-${context.display}`}
                 key={values._id}
               >
                 <span onClick={() => toggleComplete(values._id)}>
@@ -153,6 +147,9 @@ const Todo2 = (props) =>{
               </li>
             ))}
           </ul>
+          <button onClick={hide}>Hide completed</button>
+          <button onClick={show}>Show completed</button>
+
         </div>
       </section>
 
@@ -169,6 +166,8 @@ const Todo2 = (props) =>{
           </div>
         </Modal>
       </When>
+
+      <Footer/>
     </>
   );
 };

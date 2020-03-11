@@ -58,15 +58,19 @@ body, html {
             font-size: .75em;
             margin: .75em .5em;
 
-            &.complete-true {
-              span {
-                background: pink;
-                text-decoration:line-through;
-                &:hover {
-                   background: seagreen;
+            &.complete-true-false {
+                display: none;
+           
+            }
+            &.complete-true-true {
+                span {
+                  background: pink;
+                  text-decoration:line-through;
+                  &:hover {
+                     background: seagreen;
+                  }
                 }
               }
-            }
 
             span {
                 background: #e0e0e0;

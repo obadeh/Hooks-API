@@ -5,13 +5,16 @@ import React from 'react';
 
 // API Connected (Live Data)
 import ToDo from './components/todo/todo-connected.js';
+import SettingsProvider from './components/context/setting.js';
 
 export default class App extends React.Component {
   render() {
     return (
-      <div>
-        <ToDo />
-      </div>
+      <SettingsProvider>
+        <div>
+          <ToDo />
+        </div>
+      </SettingsProvider>
     );
   }
 }

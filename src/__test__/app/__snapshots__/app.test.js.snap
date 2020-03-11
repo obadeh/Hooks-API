@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> renders correctly 1`] = `
+<div>
+  <header>
+    <h2>
+      <p>
+        There are
+      </p>
+      0
+      " Items To Complete
+    </h2>
+  </header>
+  <section
+    className="todo"
+  >
+    <div>
+      <h3>
+        Add Item
+      </h3>
+      <form
+        onSubmit={[Function]}
+      >
+        <label>
+          <span>
+            To Do Item
+          </span>
+          <input
+            name="text"
+            onChange={[Function]}
+            placeholder="Add To Do List Item"
+          />
+        </label>
+        <label>
+          <span>
+            Difficulty Rating
+          </span>
+          <input
+            defaultValue="3"
+            max="5"
+            min="1"
+            name="difficulty"
+            onChange={[Function]}
+            type="range"
+          />
+        </label>
+        <label>
+          <span>
+            Assigned To
+          </span>
+          <input
+            name="assignee"
+            onChange={[Function]}
+            placeholder="Assigned To"
+            type="text"
+          />
+        </label>
+        <label>
+          <span>
+            Due
+          </span>
+          <input
+            name="due"
+            onChange={[Function]}
+            type="date"
+          />
+        </label>
+        <button>
+          Add Item
+        </button>
+      </form>
+    </div>
+    <div>
+      <ul />
+      <button
+        onClick={[Function]}
+      >
+        Hide completed
+      </button>
+      <button
+        onClick={[Function]}
+      >
+        Show completed
+      </button>
+    </div>
+  </section>
+  <footer>
+    <p>
+      23:18:22 GMT+0200 (Eastern European Standard Time)
+    </p>
+    <h3>
+      By obada Q 2020
+    </h3>
+  </footer>
+</div>
+`;
